@@ -441,20 +441,19 @@ public class PlatformManager {
                                 ), false, true);
                         //FAWE end
                         event.setCancelled(true);
-                        return;
                     }
                 }
 
-                Tool tool = session.getTool(player);
-                if (tool instanceof DoubleActionBlockTool && tool.canUse(player)) {
-                    //FAWE start - run async
-                    player.runAction(() -> reset((DoubleActionBlockTool) tool)
-                            .actSecondary(queryCapability(Capability.WORLD_EDITING),
-                                    getConfiguration(), player, session, location, event.getFace()
-                            ), false, true);
-                    //FAWE end
-                    event.setCancelled(true);
-                }
+//                Tool tool = session.getTool(player);
+//                if (tool instanceof DoubleActionBlockTool && tool.canUse(player)) {
+//                    //FAWE start - run async
+//                    player.runAction(() -> reset((DoubleActionBlockTool) tool)
+//                            .actSecondary(queryCapability(Capability.WORLD_EDITING),
+//                                    getConfiguration(), player, session, location, event.getFace()
+//                            ), false, true);
+//                    //FAWE end
+//                    event.setCancelled(true);
+//                }
 
             } else if (event.getType() == Interaction.OPEN) {
                 //FAWE start - get general tool over item in main hand & run async
